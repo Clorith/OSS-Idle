@@ -1,5 +1,5 @@
 # Push a newly tagged version to the live site.
-name: Publish tagged release
+name: Publish release
 
 on:
   workflow_dispatch:
@@ -41,5 +41,5 @@ jobs:
           echo "::endgroup::"
           
           echo "::group::Rsync files"
-          rsync -avz --delete ./* ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOSTNAME }}:${{ secrets.DEPLOY_PATH }}
+          rsync -avz --delete ./build/* ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOSTNAME }}:${{ secrets.DEPLOY_PATH }}
           echo "::endgroup::"
