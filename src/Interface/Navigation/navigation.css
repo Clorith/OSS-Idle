@@ -1,0 +1,80 @@
+#adminmenuwrap {
+    position: fixed;
+    top: 0;
+    bottom: -120px;
+    z-index: 1;
+
+    width: 160px;
+    background-color: #1d2327;
+}
+
+#adminmenu {
+    margin: 12px 0;
+    padding: 0;
+    list-style: none;
+}
+
+#adminmenu * {
+    user-select: none;
+}
+
+#adminmenu li {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#adminmenu li a {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 2px 5px;
+
+    color: #f0f0f1;
+    transition-property: border,background,color;
+    transition-duration: .05s;
+    transition-timing-function: ease-in-out;
+
+    text-decoration: none;
+}
+
+#adminmenu li.wp-menu-open {
+    position: relative;
+}
+
+#adminmenu li.wp-menu-open:after {
+    right: 0;
+    border: solid 8px transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #f0f0f1;
+    top: 50%;
+    margin-top: -8px;
+}
+
+#adminmenu li.wp-menu-open a {
+    background: #2271b1;
+    color: #fff;
+}
+
+#adminmenu li:hover {
+    position: relative;
+    background-color: #1d2327;
+    color: #72aee6;
+}
+#adminmenu a:hover {
+    color: #72aee6;
+    box-shadow: inset 4px 0 0 0 currentColor;
+    transition: box-shadow .1s linear;
+}
+
+#adminmenu .wp-menu-name {
+    padding: 8px 8px 8px 36px;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
