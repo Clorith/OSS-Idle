@@ -1,4 +1,4 @@
-#adminmenuwrap {
+#menuwrap {
     position: fixed;
     top: 0;
     bottom: -120px;
@@ -8,23 +8,23 @@
     background-color: #1d2327;
 }
 
-#adminmenu {
+#menu {
     margin: 12px 0;
     padding: 0;
     list-style: none;
 }
 
-#adminmenu * {
+#menu * {
     user-select: none;
 }
 
-#adminmenu li {
+#menu li {
     margin: 0;
     padding: 0;
     cursor: pointer;
 }
 
-#adminmenu li a {
+#menu li a {
     display: block;
     font-size: 14px;
     font-weight: 400;
@@ -39,11 +39,11 @@
     text-decoration: none;
 }
 
-#adminmenu li.wp-menu-open {
+#menu li.menu-open {
     position: relative;
 }
 
-#adminmenu li.wp-menu-open:after {
+#menu li.menu-open:after {
     right: 0;
     border: solid 8px transparent;
     content: " ";
@@ -56,25 +56,32 @@
     margin-top: -8px;
 }
 
-#adminmenu li.wp-menu-open a {
+#menu li.menu-open a {
     background: #2271b1;
     color: #fff;
 }
 
-#adminmenu li:hover {
+#menu li:hover {
     position: relative;
     background-color: #1d2327;
     color: #72aee6;
 }
-#adminmenu a:hover {
+#menu a:hover {
     color: #72aee6;
     box-shadow: inset 4px 0 0 0 currentColor;
     transition: box-shadow .1s linear;
 }
 
-#adminmenu .wp-menu-name {
+#menu .menu-name {
     padding: 8px 8px 8px 36px;
     word-wrap: break-word;
     word-break: break-word;
     hyphens: auto;
+}
+
+#menu .menu-separator {
+    height: 5px;
+    padding: 0;
+    margin: 0 0 6px 0;
+    cursor: inherit;
 }

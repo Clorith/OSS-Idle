@@ -2,28 +2,32 @@ import './navigation.css';
 import {Link} from "react-router-dom";
 
 function Navigation() {
+    const isActiveRoute = ( path ) => {
+        return document.location.pathname === path;
+    }
+
     return (
-        <div className="adminmenumain" role="navigation" aria-label="Main menu">
-            <div id="adminmenuwrap">
-                <ul id="adminmenu">
-                    <li className="wp-menu-open">
+        <nav role="navigation" aria-label="Main menu">
+            <div id="menuwrap">
+                <ul id="menu">
+                    <li className={ isActiveRoute( '/' ) ? 'menu-open' : '' }>
                         <Link to="/">
-                            <div className="wp-menu-name">
+                            <div className="menu-name">
                                 Dashboard
                             </div>
                         </Link>
                     </li>
-                    <li className="wp-menu-separator" aria-hidden="true"/>
-                    <li>
+                    <li className="menu-separator" aria-hidden="true"/>
+                    <li className={ isActiveRoute( '/about' ) ? 'menu-open' : '' }>
                         <Link to="/about">
-                            <div className="wp-menu-name">
+                            <div className="menu-name">
                                 About
                             </div>
                         </Link>
                     </li>
                 </ul>
             </div>
-        </div>
+        </nav>
     )
 }
 

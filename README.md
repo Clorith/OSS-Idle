@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# OSS Idle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**This is a work in project, and not fully published yet**
 
-## Available Scripts
+Open Source Software Idle (OSS Idle) is a project with two goals behind it.
 
-In the project directory, you can run:
+Firstly, the creator (@Clorith) is a big fan of idle/incremental/clicker style games, and being involved with open source communities, wanted to build something based on an area where he had some familiarity.
 
-### `npm start`
+Secondly, it serves to show various aspects of open source maintenance, as your project grows, so does the elements involved in its continued development.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is all fun and games, so enjoy, maybe pick up a thing or two, and see where it all goes!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Acknowledgements
 
-### `npm test`
+The interface is inspired by, and made as similar as possible to, the WordPress admin interface. Being a large open source project, this just felt like the right fit, it's an interface which may be familiar to many users, even non-technical ones.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As such, you may find some references to familiar class names, or markup, that may have been inherited from other projects.
 
-### `npm run build`
+In the spirit of open source, the idle game is of course available in its entirety, feel free to browse the code, fork it, play with it, do something fun! Of course, some of the mystery may be lost in doing so, as you won't discover things through the game itself, you have been warned.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you have a good idea, or maybe even made some improvements, contributions are always welcome!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Suggest a change or improvement](https://github.com/Clorith/OSS-Idle/issues/new)
+- [Create a Pull Request with your own changes](https://github.com/Clorith/OSS-Idle/pulls)
+- [Tweet at the creator](https://twitter.com/intent/tweet?screen_name=ClorithMJ)
 
-### `npm run eject`
+### Contributing code
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project is built on [React](https://reactjs.org/), a JavaScript framework.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Building your own copy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After downloading the source code, or fetching it via Git, use `npm install` to install all dependencies, followed by `npm run start` to start your own local copy of the project.

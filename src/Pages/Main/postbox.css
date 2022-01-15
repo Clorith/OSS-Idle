@@ -1,0 +1,53 @@
+.postbox {
+    position: relative;
+    min-width: 255px;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+    background: #fff;
+
+    margin-bottom: 20px;
+    padding: 0;
+    line-height: 1;
+
+    max-width: 50%;
+}
+
+.postbox-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.postbox-header h2 {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.inside {
+    margin: 11px 0 0;
+    padding: 0;
+    position: relative;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+.inside .main {
+    padding: 0 12px 11px;
+}
+
+.main ul {
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.main ul li {
+    width: 50%;
+    float: left;
+    margin-bottom: 10px;
+}
