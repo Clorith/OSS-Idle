@@ -17,7 +17,7 @@ function Code( { resources, setResources, feature } ) {
         terminal.value += '\nMore code!';
         terminal.scrollTop = terminal.scrollHeight;
 
-        if ( !feature.sponsors || ( feature.sponsors && sponsors < 100 ) ) {
+        if ( linesOfCode > 10000 && ( !feature.sponsors || ( feature.sponsors && sponsors < 100 ) ) ) {
             let clickDelay = 1000; // Click-delay is 1 second by default, and reduced with sponsorships, until you can work full time on the project.
             let delayReduction = sponsors > 0 ? sponsors * 10 : 10;
 
@@ -46,9 +46,14 @@ function Code( { resources, setResources, feature } ) {
                             Start writing code for your project, hit the button, and watch the magic!
                         </p>
 
-                        {!feature.sponsors &&
+                        {!feature.sponsors && linesOfCode > 10000 &&
                             <p className="about-description">
                                 You are spending your free time writing code, and your availability is limited.
+                            </p>
+                        }
+                        {!feature.sponsors && linesOfCode < 10000 &&
+                            <p className="about-description">
+                                You are spending your free time writing code, but your initial excitement helps fuel your productivity!
                             </p>
                         }
                         {feature.sponsors &&
