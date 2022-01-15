@@ -5,9 +5,7 @@ function Main( { resources, setResources, feature, setFeature } ) {
     const {
         linesOfCode,
         contributors,
-        dependencies,
-        sponsors,
-        plugins
+        sponsors
     } = resources;
 
     const updateCode = () => {
@@ -82,10 +80,10 @@ function Main( { resources, setResources, feature, setFeature } ) {
                         <ul>
                             <li>{ linesOfCode } Lines of code</li>
                             {feature?.contributors &&
-                                <li>0 Contributors</li>
+                                <li>{ contributors } Contributors</li>
                             }
                             {feature?.sponsors &&
-                                <li>0 Sponsors</li>
+                                <li>{ sponsors } Sponsors</li>
                             }
                             <li>0% Marketshare</li>
                         </ul>
