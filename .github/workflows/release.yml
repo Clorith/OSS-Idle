@@ -1,0 +1,45 @@
+# Push a newly tagged version to the live site.
+name: Publish tagged release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Build and publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+
+      - name: Install NPM modules
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Push to server
+        working-directory: ./
+        run: |
+          echo "::group::Setup Auth Keys"
+          mkdir ~/.ssh
+          echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" >> ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "::endgroup::"
+          
+          echo "::group::Pre-approve rsync destination"
+          ssh-keyscan -H ${{ secrets.DEPLOY_HOSTNAME }} > ~/.ssh/known_hosts
+          echo "::endgroup::"
+          
+          echo "::group::Rsync files"
+          rsync -avz --delete ./* ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOSTNAME }}:${{ secrets.DEPLOY_PATH }}
+          echo "::endgroup::"
