@@ -1,56 +1,48 @@
 import './postbox.css';
-import './trigger.css';
+import {Link, NavLink} from "react-router-dom";
 
-function Main( { resources, setResources, feature, setFeature } ) {
+function Main( { resources, feature } ) {
     const {
         linesOfCode,
         contributors,
         sponsors
     } = resources;
 
-    const updateCode = () => {
-        let newResource = linesOfCode + 1;
-
-        if ( newResource >= 10 ) {
-            setFeature( { contributors: true } );
-        }
-
-        setResources( { linesOfCode: newResource } );
-    }
-
     return (
         <>
-            <div id="welcome-panel" className="welcome-panel">
-                <div className="welcome-panel-content">
+            <div className="hero-box">
+                <div className="hero-box-content">
                     <h2>Welcome to OSS Idle!</h2>
                     <p className="about-description">Open Source Software Idle will give you an appreciation for all the aspects that play into the creation, and maintenance, of open source software.</p>
                     <p className="about-description">Start writing code, and watch your project grow!</p>
 
-                    <div className="welcome-panel-column-container">
-                        <div className="welcome-panel-column">
+                    <div className="hero-box-column-container">
+                        <div className="hero-box-column">
                             <h3>Get Started</h3>
-                            <button className="button button-primary button-hero" onClick={ updateCode }>Write some code</button>
+                            <NavLink to="/code" className="button button-primary button-hero">
+                                Go write some code
+                            </NavLink>
                         </div>
 
-                        <div className="welcome-panel-column">
+                        <div className="hero-box-column">
                             <h3>Next Steps</h3>
                             <ul>
                                 <li>
-                                    Something
+                                    <Link to="/code">Start writing code</Link>
                                 </li>
                                 <li>
-                                    More stuff
+                                    Earn sponsors
                                 </li>
                                 <li>
-                                    More stuff
+                                    Encourage others to contribute
                                 </li>
                                 <li>
-                                    More stuff
+                                    Grow your platform
                                 </li>
                             </ul>
                         </div>
 
-                        <div className="welcome-panel-column">
+                        <div className="hero-box-column">
                             <h3>More Actions</h3>
                             <ul>
                                 <li>
@@ -85,7 +77,6 @@ function Main( { resources, setResources, feature, setFeature } ) {
                             {feature?.sponsors &&
                                 <li>{ sponsors } Sponsors</li>
                             }
-                            <li>0% Marketshare</li>
                         </ul>
                     </div>
                 </div>

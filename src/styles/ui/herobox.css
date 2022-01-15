@@ -1,4 +1,4 @@
-.welcome-panel {
+.hero-box {
     position: relative;
     overflow: auto;
     margin: 16px 0;
@@ -10,43 +10,43 @@
     line-height: 1.7;
 }
 
-.welcome-panel-content {
+.hero-box-content {
     margin-left: 13px;
     max-width: 1500px;
 }
 
-.welcome-panel h2 {
+.hero-box h2 {
     margin: 0;
     font-size: 21px;
     font-weight: 400;
     line-height: 1.2;
 }
-.welcome-panel h3 {
+.hero-box h3 {
     color: #1d2327;
     margin: 1.33em 0 0;
     font-size: 16px;
 }
 
-.welcome-panel .about-description {
+.hero-box .about-description {
     font-size: 16px;
     margin: 0;
 }
 
-.welcome-panel-column-container {
+.hero-box-column-container {
     clear: both;
     position: relative;
 }
 
-.welcome-panel-column {
+.hero-box-column {
     width: 32%;
     min-width: 200px;
     float: left;
 }
-.welcome-panel-column:first-child {
+.hero-box-column:first-child {
     width: 36%;
 }
 
-.welcome-panel .button-hero {
+.hero-box .button-hero {
     margin: 15px 13px 3px 0;
     padding: 12px 36px;
     height: auto;
@@ -54,12 +54,12 @@
     white-space: normal;
 }
 
-.welcome-panel ul {
+.hero-box ul {
     list-style: none;
     padding: 0;
     margin: 0.8em 1em 1em 0;
 }
-.welcome-panel ul li {
+.hero-box ul li {
     line-height: 1.13285714;
     list-style-type: none;
     padding: 0 0 8px;
