@@ -1,11 +1,23 @@
 import './postbox.css';
 import './trigger.css';
 
-function Main( { resources, setResources } ) {
-    const updateCode = () => {
-        let newResource = resources + 1;
+function Main( { resources, setResources, feature, setFeature } ) {
+    const {
+        linesOfCode,
+        contributors,
+        dependencies,
+        sponsors,
+        plugins
+    } = resources;
 
-        setResources( newResource );
+    const updateCode = () => {
+        let newResource = linesOfCode + 1;
+
+        if ( newResource >= 10 ) {
+            setFeature( { contributors: true } );
+        }
+
+        setResources( { linesOfCode: newResource } );
     }
 
     return (
@@ -68,9 +80,13 @@ function Main( { resources, setResources } ) {
                 <div className="inside">
                     <div className="main">
                         <ul>
-                            <li>{ resources } Lines of code</li>
-                            <li>0 Contributors</li>
-                            <li>0 Sponsors</li>
+                            <li>{ linesOfCode } Lines of code</li>
+                            {feature?.contributors &&
+                                <li>0 Contributors</li>
+                            }
+                            {feature?.sponsors &&
+                                <li>0 Sponsors</li>
+                            }
                             <li>0% Marketshare</li>
                         </ul>
                     </div>

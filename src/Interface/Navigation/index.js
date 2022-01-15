@@ -1,7 +1,11 @@
 import './navigation.css';
 import {Link} from "react-router-dom";
 
-function Navigation() {
+function Navigation( props ) {
+    const {
+        feature
+    } = props;
+
     const isActiveRoute = ( path ) => {
         return document.location.pathname === path;
     }
@@ -17,6 +21,15 @@ function Navigation() {
                             </div>
                         </Link>
                     </li>
+                    {feature?.plugins &&
+                        <li className={ isActiveRoute( '/plugins' ) ? 'menu-open' : '' }>
+                            <Link to="/plugins">
+                                <div className="menu-name">
+                                    Plugins
+                                </div>
+                            </Link>
+                        </li>
+                    }
                     <li className="menu-separator" aria-hidden="true"/>
                     <li className={ isActiveRoute( '/about' ) ? 'menu-open' : '' }>
                         <Link to="/about">

@@ -7,16 +7,18 @@ import About from "../Pages/About";
 function Interface( props ) {
     const {
         resources,
-        setResources
+        setResources,
+        feature,
+        setFeature
     } = props;
 
     return (
         <>
-            <Navigation/>
+            <Navigation feature={ feature }/>
 
             <div id="content">
                 <Routes>
-                    <Route path="/" element={ <Main resources={ resources } setResources={ setResources } /> }>
+                    <Route path="/" element={ <Main resources={ resources } setResources={ setResources } feature={ feature } setFeature={ setFeature } /> }>
                         <Route path="about" element={ <About /> } />
                     </Route>
                 </Routes>
