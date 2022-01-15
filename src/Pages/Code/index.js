@@ -8,12 +8,12 @@ function Code( { resources, setResources, feature } ) {
         sponsors
     } = resources;
 
-    const terminal = document.getElementById( 'terminal' );
-
     const [ disableCodeWriting, setDisableCodeWriting ] = useState( false );
 
     const updateCode = () => {
+        const terminal = document.getElementById( 'terminal' );
         let newResource = linesOfCode + 1;
+
         terminal.value += '\nMore code!';
         terminal.scrollTop = terminal.scrollHeight;
 
