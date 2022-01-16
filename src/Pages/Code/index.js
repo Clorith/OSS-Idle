@@ -1,6 +1,7 @@
 import {useState} from "react";
 
 import './code.css';
+import * as SampleCodes from "./sample-code";
 
 function Code( { resources, setResources, feature } ) {
     const {
@@ -9,13 +10,22 @@ function Code( { resources, setResources, feature } ) {
     } = resources;
 
     const [ disableCodeWriting, setDisableCodeWriting ] = useState( false );
+    const sampleCodeLines = SampleCodes.WordPressAbout.split( '\n' );
+
+    const [ writtenSampleCodeLine, setWrittenSampleCodeLine ] = useState( 0 );
 
     const updateCode = () => {
         const terminal = document.getElementById( 'terminal' );
         let newResource = linesOfCode + 1;
 
-        terminal.value += '\nMore code!';
+        // Reset the terminal if a full file has been written.
+        if ( writtenSampleCodeLine >= sampleCodeLines.length ) {
+            setWrittenSampleCodeLine( 0 );
+            terminal.value = '';
+        }
+        terminal.value += '\n' + sampleCodeLines[ writtenSampleCodeLine ];
         terminal.scrollTop = terminal.scrollHeight;
+        setWrittenSampleCodeLine( writtenSampleCodeLine+1 );
 
         if ( linesOfCode > 10000 && ( !feature.sponsors || ( feature.sponsors && sponsors < 100 ) ) ) {
             let clickDelay = 1000; // Click-delay is 1 second by default, and reduced with sponsorships, until you can work full time on the project.
@@ -75,7 +85,7 @@ function Code( { resources, setResources, feature } ) {
 
             <div className="right-side">
                 <textarea id="terminal"
-                          defaultValue="Terminal source: https://github.com/WordPress/WordPress/blob/0bc24dd81fa62176e0f38072204aecff289cb31a/wp-admin/about.php"
+                      defaultValue="Terminal source: https://github.com/WordPress/WordPress/blob/0bc24dd81fa62176e0f38072204aecff289cb31a/wp-admin/about.php"
                 />
             </div>
         </div>
