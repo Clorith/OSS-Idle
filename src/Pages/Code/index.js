@@ -3,6 +3,7 @@ import Hero from "../../Interface/Components/Hero";
 
 import './code.css';
 import * as SampleCodes from "./sample-code";
+import * as Settings from "../../config";
 import Notice from "../../Interface/Notice";
 
 function Code( { resources, setResources, feature, setFeature } ) {
@@ -38,8 +39,8 @@ function Code( { resources, setResources, feature, setFeature } ) {
 
         setWrittenSampleCodeLine( nextCodeLineToWrite );
 
-        if ( linesOfCode > 10000 && ( !feature.sponsors || ( feature.sponsors && sponsors < 100 ) ) ) {
-            let clickDelay = 1000; // Click-delay is 1 second by default, and reduced with sponsorships, until you can work full time on the project.
+        if ( linesOfCode > Settings.baseBurnoutDelay && ( !feature.sponsors || ( feature.sponsors && sponsors < 100 ) ) ) {
+            let clickDelay = Settings.initialInspirationLines; // Click-delay is 1 second by default, and reduced with sponsorships, until you can work full time on the project.
             let delayReduction = sponsors > 0 ? sponsors * 10 : 10;
 
             clickDelay = clickDelay - delayReduction;
