@@ -2,6 +2,7 @@ import './App.css';
 import Interface from "./Interface";
 import {BrowserRouter} from "react-router-dom";
 import {useEffect, useReducer} from "react";
+import maybeAddContributor from "./Schedulers/contributor";
 
 function App() {
     const defaultResources = () => {
@@ -51,6 +52,17 @@ function App() {
     useEffect( () => {
         window.localStorage.setItem( 'feature', JSON.stringify( feature ) )
     }, [ feature ] );
+
+    useEffect( () => {
+        const incrementContributors = setInterval(
+            () => {
+                maybeAddContributor( feature, resources, setResources );
+            },
+            1000
+        );
+
+        return () => clearInterval( incrementContributors );
+    }, [ feature, resources ] );
 
     return (
         <BrowserRouter>

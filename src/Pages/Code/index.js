@@ -65,12 +65,12 @@ function Code( { resources, setResources, feature, setFeature } ) {
                         Start writing code for your project, hit the button, and watch the magic!
                     </p>
 
-                    {!feature.sponsors && linesOfCode > 10000 &&
+                    {!feature.sponsors && linesOfCode > Settings.baseBurnoutDelay &&
                         <p className="about-description">
                             You are spending your free time writing code, and your availability is limited.
                         </p>
                     }
-                    {!feature.sponsors && linesOfCode < 10000 &&
+                    {!feature.sponsors && linesOfCode < Settings.baseBurnoutDelay &&
                         <p className="about-description">
                             You are spending your free time writing code, but your initial excitement helps fuel your productivity!
                         </p>
