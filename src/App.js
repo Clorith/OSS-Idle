@@ -3,6 +3,7 @@ import Interface from "./Interface";
 import {BrowserRouter} from "react-router-dom";
 import {useEffect, useReducer} from "react";
 import maybeAddContributor from "./Schedulers/contributor";
+import maybeAddUser from "./Schedulers/user";
 
 function App() {
     const defaultResources = () => {
@@ -17,7 +18,8 @@ function App() {
                 dependencies: 0,
                 sponsors: 0,
                 versions: 0,
-                plugins: 0
+                plugins: 0,
+                users: 0
             }
     }
 
@@ -36,6 +38,7 @@ function App() {
         return null !== hasExistingFlags
             ? JSON.parse( hasExistingFlags )
             : {
+                users: false,
                 release: false,
                 plugins: false,
                 sponsors: false,
@@ -62,6 +65,17 @@ function App() {
         );
 
         return () => clearInterval( incrementContributors );
+    }, [ feature, resources ] );
+
+    useEffect( () => {
+        const incrementUsers = setInterval(
+            () => {
+                maybeAddUser( feature, resources, setResources );
+            },
+            1000
+        );
+
+        return () => clearInterval( incrementUsers );
     }, [ feature, resources ] );
 
     return (

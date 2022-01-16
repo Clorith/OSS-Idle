@@ -7,7 +7,8 @@ function Main( { resources, feature } ) {
         linesOfCode,
         contributors,
         sponsors,
-        versions
+        versions,
+        users
     } = resources;
 
     return (
@@ -78,6 +79,9 @@ function Main( { resources, feature } ) {
                             }
                             {feature?.sponsors &&
                                 <li>{ sponsors } Sponsors</li>
+                            }
+                            {feature?.users &&
+                                <li>{ users } Users</li>
                             }
                         </ul>
                     </div>
