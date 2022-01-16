@@ -1,4 +1,5 @@
 import {useState} from "react";
+import Hero from "../../Interface/Components/Hero";
 
 import './code.css';
 import * as SampleCodes from "./sample-code";
@@ -56,31 +57,27 @@ function Code( { resources, setResources, feature } ) {
     return(
         <div id="code-screen">
             <div className="left-side">
-                <div className="hero-box">
-                    <div className="hero-box-content">
-                        <h2>Writing code</h2>
+                <Hero title="Writing code">
+                    <p className="about-description">
+                        Start writing code for your project, hit the button, and watch the magic!
+                    </p>
 
+                    {!feature.sponsors && linesOfCode > 10000 &&
                         <p className="about-description">
-                            Start writing code for your project, hit the button, and watch the magic!
+                            You are spending your free time writing code, and your availability is limited.
                         </p>
-
-                        {!feature.sponsors && linesOfCode > 10000 &&
-                            <p className="about-description">
-                                You are spending your free time writing code, and your availability is limited.
-                            </p>
-                        }
-                        {!feature.sponsors && linesOfCode < 10000 &&
-                            <p className="about-description">
-                                You are spending your free time writing code, but your initial excitement helps fuel your productivity!
-                            </p>
-                        }
-                        {feature.sponsors &&
-                            <p className="about-description">
-                                Your work has earned some recognition, and { resources.sponsors } sponsors are helping to cover x% of your salary so you can continue working on the project.
-                            </p>
-                        }
-                    </div>
-                </div>
+                    }
+                    {!feature.sponsors && linesOfCode < 10000 &&
+                        <p className="about-description">
+                            You are spending your free time writing code, but your initial excitement helps fuel your productivity!
+                        </p>
+                    }
+                    {feature.sponsors &&
+                        <p className="about-description">
+                            Your work has earned some recognition, and { resources.sponsors } sponsors are helping to cover x% of your salary so you can continue working on the project.
+                        </p>
+                    }
+                </Hero>
 
                 <span className="lines-of-code">
                     { resources.linesOfCode }

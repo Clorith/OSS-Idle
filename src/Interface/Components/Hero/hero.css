@@ -2,7 +2,7 @@
     position: relative;
     overflow: auto;
     margin: 16px 0;
-    padding: 23px 10px 0;
+    padding: 23px 10px;
     border: 1px solid #c3c4c7;
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
     background: #fff;
