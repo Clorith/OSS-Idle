@@ -3,6 +3,7 @@ import Hero from "../../Interface/Components/Hero";
 
 import './code.css';
 import * as SampleCodes from "./sample-code";
+import Notice from "../../Interface/Notice";
 
 function Code( { resources, setResources, feature } ) {
     const {
@@ -86,6 +87,12 @@ function Code( { resources, setResources, feature } ) {
                 <div className="actions">
                     <button className="button button-primary button-hero" onClick={ updateCode } disabled={ disableCodeWriting }>Write some code</button>
                 </div>
+
+                <Notice type="warning">
+                    <p>
+                        Remember to finish writing your file before leaving, or you may end up re-writing your code!
+                    </p>
+                </Notice>
             </div>
 
             <div className="right-side">
