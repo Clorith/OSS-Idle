@@ -35,6 +35,7 @@ function App() {
         return null !== hasExistingFlags
             ? JSON.parse( hasExistingFlags )
             : {
+                release: false,
                 plugins: false,
                 sponsors: false,
                 contributors: false,

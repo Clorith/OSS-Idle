@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Main from "../Pages/Main";
 import About from "../Pages/About";
 import Code from "../Pages/Code";
+import Release from "../Pages/Release";
 
 function Interface( props ) {
     const {
@@ -22,6 +23,7 @@ function Interface( props ) {
                     <Route path="/">
                         <Route index={true} element={ <Main resources={ resources } feature={ feature } /> } />
                         <Route index={false} path="code" element={ <Code resources={ resources } setResources={ setResources } feature={ feature } setFeature={ setFeature } />} />
+                        <Route index={false} path="release" element={ <Release resources={ resources } setResources={ setResources } feature={ feature } setFeature={ setFeature } /> } />
                         <Route index={false} path="about" element={ <About /> } />
                     </Route>
                 </Routes>

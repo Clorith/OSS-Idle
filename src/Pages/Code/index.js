@@ -5,7 +5,7 @@ import './code.css';
 import * as SampleCodes from "./sample-code";
 import Notice from "../../Interface/Notice";
 
-function Code( { resources, setResources, feature } ) {
+function Code( { resources, setResources, feature, setFeature } ) {
     const {
         linesOfCode,
         filesWritten,
@@ -28,6 +28,7 @@ function Code( { resources, setResources, feature } ) {
         // Reset the terminal if a full file has been written.
         if ( nextCodeLineToWrite >= sampleCodeLines.length ) {
             setResources( { filesWritten: ( Number.isInteger( filesWritten ) ? filesWritten + 1 : 1 ) } )
+            setFeature( { release: true } );
 
             nextCodeLineToWrite = 0;
             terminal.value = '';

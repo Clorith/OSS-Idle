@@ -6,7 +6,8 @@ function Main( { resources, feature } ) {
     const {
         linesOfCode,
         contributors,
-        sponsors
+        sponsors,
+        versions
     } = resources;
 
     return (
@@ -69,6 +70,9 @@ function Main( { resources, feature } ) {
                     <div className="main">
                         <ul>
                             <li>{ linesOfCode } Lines of code</li>
+                            {feature?.release &&
+                                <li>{ versions } Versions released </li>
+                            }
                             {feature?.contributors &&
                                 <li>{ contributors } Contributors</li>
                             }

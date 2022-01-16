@@ -30,6 +30,15 @@ function Navigation( props ) {
                             </Link>
                         </li>
                     }
+                    {feature?.release &&
+                        <li className={ isActiveRoute( '/release' ) ? 'menu-open' : '' }>
+                            <Link to="/release">
+                                <div className="menu-name">
+                                    Releases
+                                </div>
+                            </Link>
+                        </li>
+                    }
                     <li className="menu-separator" aria-hidden="true"/>
                     <li className={ isActiveRoute( '/about' ) ? 'menu-open' : '' }>
                         <Link to="/about">
