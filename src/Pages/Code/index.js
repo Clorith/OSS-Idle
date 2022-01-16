@@ -6,26 +6,34 @@ import * as SampleCodes from "./sample-code";
 function Code( { resources, setResources, feature } ) {
     const {
         linesOfCode,
+        filesWritten,
         sponsors
     } = resources;
 
     const [ disableCodeWriting, setDisableCodeWriting ] = useState( false );
     const sampleCodeLines = SampleCodes.WordPressAbout.split( '\n' );
 
-    const [ writtenSampleCodeLine, setWrittenSampleCodeLine ] = useState( 0 );
+    const [ writtenSampleCodeLine, setWrittenSampleCodeLine ] = useState( -1 );
+
+    let nextCodeLineToWrite = writtenSampleCodeLine;
 
     const updateCode = () => {
         const terminal = document.getElementById( 'terminal' );
         let newResource = linesOfCode + 1;
 
+        nextCodeLineToWrite++;
+
         // Reset the terminal if a full file has been written.
-        if ( writtenSampleCodeLine >= sampleCodeLines.length ) {
-            setWrittenSampleCodeLine( 0 );
+        if ( nextCodeLineToWrite >= sampleCodeLines.length ) {
+            setResources( { filesWritten: ( Number.isInteger( filesWritten ) ? filesWritten + 1 : 1 ) } )
+
+            nextCodeLineToWrite = 0;
             terminal.value = '';
         }
-        terminal.value += '\n' + sampleCodeLines[ writtenSampleCodeLine ];
+        terminal.value += '\n' + sampleCodeLines[ nextCodeLineToWrite ];
         terminal.scrollTop = terminal.scrollHeight;
-        setWrittenSampleCodeLine( writtenSampleCodeLine+1 );
+
+        setWrittenSampleCodeLine( nextCodeLineToWrite );
 
         if ( linesOfCode > 10000 && ( !feature.sponsors || ( feature.sponsors && sponsors < 100 ) ) ) {
             let clickDelay = 1000; // Click-delay is 1 second by default, and reduced with sponsorships, until you can work full time on the project.

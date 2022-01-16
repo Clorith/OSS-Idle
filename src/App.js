@@ -11,9 +11,11 @@ function App() {
             ? JSON.parse( hasExistingResources )
             : {
                 linesOfCode: 0,
+                filesWritten: 0,
                 contributors: 0,
                 dependencies: 0,
                 sponsors: 0,
+                versions: 0,
                 plugins: 0
             }
     }
