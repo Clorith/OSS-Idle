@@ -18,6 +18,8 @@ As such, you may find some references to familiar class names, or markup, that m
 
 In the spirit of open source, the idle game is of course available in its entirety, feel free to browse the code, fork it, play with it, do something fun! Of course, some of the mystery may be lost in doing so, as you won't discover things through the game itself, you have been warned.
 
+Reusable components, UI elements, and icons, are from the [Material UI](https://mui.com/) component library.
+
 ## Contributing
 
 If you have a good idea, or maybe even made some improvements, contributions are always welcome!
