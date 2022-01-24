@@ -3,3 +3,5 @@ export const initialInspirationLines = 1000; // Amount of lines of code that can
 
 export const baseChanceAddContributor = 1; // Percentage chance to add a new contributor.
 export const baseChanceAddUser = 10; // Percentage chance to gain a new project user.
+
+export const debugMode = false;

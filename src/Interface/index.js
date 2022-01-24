@@ -5,6 +5,9 @@ import Main from "../Pages/Main";
 import About from "../Pages/About";
 import Code from "../Pages/Code";
 import Release from "../Pages/Release";
+import DevTools from "../Pages/Devtools";
+
+import * as Settings from "../config";
 
 function Interface( props ) {
     const {
@@ -25,6 +28,10 @@ function Interface( props ) {
                         <Route index={false} path="code" element={ <Code resources={ resources } setResources={ setResources } feature={ feature } setFeature={ setFeature } />} />
                         <Route index={false} path="release" element={ <Release resources={ resources } setResources={ setResources } feature={ feature } setFeature={ setFeature } /> } />
                         <Route index={false} path="about" element={ <About /> } />
+
+                        {Settings.debugMode &&
+                            <Route index={false} path="devtools" element={<DevTools feature={feature} setFeature={setFeature} resources={resources} setResources={setResources}/>}/>
+                        }
                     </Route>
                 </Routes>
             </div>
